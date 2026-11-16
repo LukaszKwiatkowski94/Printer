@@ -1,0 +1,29 @@
+{
+    "name": "Printer development",
+    "dockerComposeFile": "../compose.yaml",
+    "service": "workspace",
+    "workspaceFolder": "/workspaces/printer",
+    "remoteUser": "vscode",
+    "updateRemoteUserUID": false,
+    "initializeCommand": "docker compose -f compose.yaml -f .devcontainer/compose.build.yaml build workspace",
+    "forwardPorts": [
+        4200,
+        8000
+    ],
+    "portsAttributes": {
+        "4200": {
+            "label": "Angular"
+        },
+        "8000": {
+            "label": "Laravel"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Angular.ng-template",
+                "bmewburn.vscode-intelephense-client"
+            ]
+        }
+    }
+}
